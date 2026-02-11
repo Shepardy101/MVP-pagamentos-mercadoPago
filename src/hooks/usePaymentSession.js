@@ -60,7 +60,13 @@ export function usePaymentSession(dadosFormulario) {
                 if (onApproval) onApproval();
                 return true;
             }
+            if (status === 'pending') {
+                // Não mostrar erro, apenas status aguardando
+                return false;
+            }
         } catch (error) {
+            // Se status for pending, não mostrar erro
+            if (error?.response?.data?.status === 'pending') return false;
             console.error('Erro ao verificar status:', error);
         }
         return false;

@@ -6,8 +6,9 @@ const api = axios.create({
 });
 
 export async function buscarPagamentosPendentes() {
-  // O backend não implementa busca de pendentes, então retorna vazio
-  return [];
+  const resposta = await api.get('/pendentes');
+  return resposta.data;
+}
 }
 
 export async function cancelarPagamento(id) {
