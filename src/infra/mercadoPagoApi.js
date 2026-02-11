@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+const isDev = import.meta.env.MODE === 'development';
 const api = axios.create({
-  baseURL: '/mp-api',
+  baseURL: isDev ? '/mp-api' : 'https://api.mercadopago.com',
 });
 
 api.interceptors.request.use((config) => {
