@@ -10,17 +10,16 @@ const apiMP = axios.create({
   }
 });
 
-// Retorna pagamentos pendentes
+// Retorna todas as transações não concluídas
 export async function getPendentes(req, res) {
   try {
-    const resposta = await apiMP.get('/v1/payments/search', {
-      params: {
-        status: 'pending',
-        sort: 'date_created',
-        order: 'desc',
-        limit: 10
-      }
-    });
+    const params = {
+      status: 'pending,in_process,authorized',
+      sort: 'date_created',
+      order: 'desc',
+      limit: 20
+    };
+    const resposta = await apiMP.get('/v1/payments/search', { params });
     return res.status(200).json(resposta.data.results);
   } catch (err) {
     console.error('Erro ao buscar pendentes:', err);

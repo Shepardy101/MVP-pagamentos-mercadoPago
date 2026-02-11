@@ -5,9 +5,10 @@ const api = axios.create({
   baseURL: isDev ? '/mp-api' : '/api/payments',
 });
 
-export async function buscarPagamentosPendentes() {
-  const resposta = await api.get('/pendentes');
+export async function buscarPagamentosPendentes(cpf) {
+  const resposta = await api.get(`/pendentes${cpf ? `?cpf=${cpf}` : ''}`);
   return resposta.data;
+}
 }
 }
 
