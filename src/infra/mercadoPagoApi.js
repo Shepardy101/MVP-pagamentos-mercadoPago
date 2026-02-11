@@ -2,32 +2,21 @@ import axios from 'axios';
 
 const isDev = import.meta.env.MODE === 'development';
 const api = axios.create({
-  baseURL: isDev ? '/mp-api' : 'https://api.mercadopago.com',
+  baseURL: isDev ? '/mp-api' : '/api/payments',
 });
 
-api.interceptors.request.use((config) => {
-  const token = import.meta.env.VITE_TOKEN_MERCADO_PAGO_PUBLIC;
-  config.headers.Authorization = `Bearer ${token}`;
-  return config;
-});
 
-export async function buscarPagamentosPendentes() {
-  const resposta = await api.get('v1/payments/search', {
-    params: {
-      status: 'pending',
-      sort: 'date_created',
-      criteria: 'desc',
-      limit: 10
-    }
-  });
-  return resposta.data.results;
+
+  // Exemplo: buscar pagamentos pendentes (ajuste conforme backend)
+  // O backend pode precisar de um endpoint específico para listar pendentes
+  // Aqui, apenas um placeholder:
+  // O backend não implementa busca de pendentes, então retorna vazio
+  return [];
 }
 
-export async function cancelarPagamento(id) {
-  const resposta = await api.put(`v1/payments/${id}`, {
-    status: 'cancelled'
-  });
+  const resposta = await api.put(`/${id}`);
   return resposta.data;
 }
 
 export default api;
+  return resposta.data;
