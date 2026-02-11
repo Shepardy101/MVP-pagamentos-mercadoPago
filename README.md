@@ -4,7 +4,7 @@
 
 ---
 
-![APP View](../../src/assets/view.png)
+![APP View](src/assets/view.png)
 
 ## 🚀 Principais Funcionalidades
 
