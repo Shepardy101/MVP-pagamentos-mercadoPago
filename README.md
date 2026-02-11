@@ -4,7 +4,7 @@
 
 ---
 
-![APP View](https://via.placeholder.com/800x400/0d0e12/00d1ff?text=Checkout+Inteligente+Premium+Dark+Theme) <!-- Substitua por um screenshot real se disponível -->
+![APP View](../../src/assets/view.png)
 
 ## 🚀 Principais Funcionalidades
 
