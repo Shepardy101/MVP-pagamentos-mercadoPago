@@ -1,4 +1,4 @@
-import * as mpService from '../src/services/mercadoPagoService.js';
+import * as mpService from '../backend/src/services/mercadoPagoService.js';
 
 export default async function handler(req, res) {
   console.log('--- Nova requisição recebida ---');
