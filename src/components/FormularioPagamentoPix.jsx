@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PagadorValidator from '../domain/validators/PagadorValidator';
 
 function FormularioPagamentoPix({ dados, aoAlterar, aoEnviar, metodoSelecionado }) {
-  const valorMinimo = metodoSelecionado === 'Boleto Bancário' ? 3.0 : 1.0;
+  const valorMinimo = metodoSelecionado === 'Boleto Bancário' ? 10.0 : 1.0;
   const [erros, setErros] = useState({});
   const [erroValorMinimo, setErroValorMinimo] = useState('');
 
@@ -38,7 +38,7 @@ function FormularioPagamentoPix({ dados, aoAlterar, aoEnviar, metodoSelecionado 
     if (!isNaN(valor) && valor < valorMinimo) {
       setErroValorMinimo(
         metodoSelecionado === 'Boleto Bancário'
-          ? 'O valor mínimo para boleto é R$ 3,00.'
+          ? 'O valor mínimo para boleto é R$ 10,00.'
           : 'O valor mínimo para PIX é R$ 1,00.'
       );
       return;
