@@ -31,7 +31,7 @@ export default class BoletoPayment extends PaymentMethod {
     };
     try {
       console.log('Payload enviado para /v1/payments:', dados);
-      const resposta = await api.post('v1/payments', dados);
+      const resposta = await api.post('/', dados);
       return resposta.data;
     } catch (error) {
       console.error('Erro ao criar pagamento:', error?.response?.data || error.message);
@@ -40,7 +40,7 @@ export default class BoletoPayment extends PaymentMethod {
   }
 
   async consultarStatus(idPagamento) {
-    const resposta = await api.get(`v1/payments/${idPagamento}`);
+    const resposta = await api.get(`/${idPagamento}`);
     return resposta.data.status;
   }
 }
