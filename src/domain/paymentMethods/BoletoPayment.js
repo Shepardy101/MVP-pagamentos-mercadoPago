@@ -7,8 +7,9 @@ export default class BoletoPayment extends PaymentMethod {
   }
 
   async criarPagamento() {
+    const valor = Number(this.dados.valor);
     const dados = {
-      transaction_amount: Number(this.dados.valor),
+      transaction_amount: Number(valor.toFixed(2)),
       description: 'Produto teste de desenvolvimento',
       payment_method_id: 'bolbradesco',
       payer: {
