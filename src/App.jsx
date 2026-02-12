@@ -120,6 +120,22 @@ function App() {
             <div style={{ marginTop: 24 }}>
               <StatusPagamentoPix />
             </div>
+            <button
+              style={{
+                marginTop: 32,
+                padding: '10px 28px',
+                fontSize: 16,
+                borderRadius: 8,
+                border: '1px solid var(--primary-color)',
+                background: 'white',
+                color: 'var(--primary-color)',
+                fontWeight: 700,
+                cursor: 'pointer'
+              }}
+              onClick={() => window.location.reload()}
+            >
+              Voltar para o início
+            </button>
           </div>
         )}
 
