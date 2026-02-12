@@ -24,6 +24,8 @@ export function useRecentPayments(cpf) {
         if (!window.confirm('Deseja realmente cancelar este pagamento?')) return false;
         try {
             await mpCancelarPagamento(id);
+            // Aguarda 2 segundos para garantir atualização no backend do Mercado Pago
+            await new Promise(resolve => setTimeout(resolve, 2000));
             await carregarPendencias();
             return true;
         } catch (error) {

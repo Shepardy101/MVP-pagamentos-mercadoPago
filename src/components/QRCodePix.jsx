@@ -26,15 +26,24 @@ function QRCodePix({ url, base64, code }) {
             <div style={{
               display: 'flex',
               gap: 8,
-              background: '#f5f5f5',
+              background: '#222',
               padding: 8,
               borderRadius: 4,
-              border: '1px solid #ccc'
+              border: '1px solid #ccc',
+              alignItems: 'center'
             }}>
               <input
                 readOnly
                 value={code}
-                style={{ flex: 1, border: 'none', background: 'transparent', fontSize: 12 }}
+                style={{
+                  flex: 1,
+                  border: 'none',
+                  background: '#222',
+                  color: '#fff',
+                  fontSize: 13,
+                  padding: '6px 4px',
+                  borderRadius: 4
+                }}
               />
               <button
                 onClick={copyToClipboard}
@@ -52,6 +61,24 @@ function QRCodePix({ url, base64, code }) {
                 Copiar
               </button>
             </div>
+                {/* Botão para voltar à tela inicial */}
+                <button
+                  onClick={() => window.location.reload()}
+                  style={{
+                    marginTop: 24,
+                    padding: '10px 28px',
+                    fontSize: 15,
+                    borderRadius: 8,
+                    border: '1px solid var(--primary-color)',
+                    background: 'white',
+                    color: 'var(--primary-color)',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  Voltar para o início
+                </button>
           </div>
         </>
       ) : (
