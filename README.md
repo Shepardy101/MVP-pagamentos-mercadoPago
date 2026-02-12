@@ -8,9 +8,9 @@
   <img src="https://img.shields.io/badge/Mercado%20Pago-API-009ee3?logo=mercadopago&logoColor=white" alt="Mercado Pago"/>
 </p>
 
-# MVP Pagamentos Mercado Pago (Vite + Serverless Node)
+# MVP - Mercado Pago (Vite + Serverless Node)
 
-> MVP completo para integração de pagamentos PIX e Boleto via Mercado Pago, pronto para produção na Vercel, com frontend React moderno e backend serverless.
+> MVP para integração de pagamentos PIX e Boleto via Mercado Pago, pronto para produção na Vercel, com frontend React moderno e backend serverless.
 
 ---
 
