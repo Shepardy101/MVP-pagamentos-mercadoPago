@@ -10,7 +10,7 @@
 
 # MVP - Mercado Pago (Vite + Serverless Node)
 
-> MVP para integração de pagamentos PIX e Boleto via Mercado Pago, pronto para produção na Vercel, com frontend React moderno e backend serverless.
+> MVP para integração de pagamentos PIX e Boleto via Mercado Pago, pronto para produção na Vercel, com frontend React, Node.js e backend serverless.
 
 ---
 
